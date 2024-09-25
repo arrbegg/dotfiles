@@ -52,11 +52,11 @@ bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOU
 
 
 # Increase brightness
-bindsym XF86MonBrightnessUp exec --no-startup-id sudo ~/bin/brightness_control.sh up
-
+#(vjerovatno sa x260)bindsym XF86MonBrightnessUp exec --no-startup-id sudo ~/bin/brightness_control.sh up
+bindsym XF86MonBrightnessUp exec xbacklight -inc 20 
 # Decrease brightness
-bindsym XF86MonBrightnessDown exec --no-startup-id sudo ~/bin/brightness_control.sh down
-
+#(vjeroavtno sa x260)bindsym XF86MonBrightnessDown exec --no-startup-id sudo ~/bin/brightness_control.sh down
+bindsym XF86MonBrightnessDown exec xbacklight -dec 20
 
 
 # Use Mouse+$mod to drag floating windows to their wanted position
@@ -220,9 +220,8 @@ mode "resize" {
 bindsym $mod+r mode "resize"
 
 
-
-set $i3lockwall i3lock -i ~/Pictures/cyber_runner.png
-#set $i3lockwall sh ~/.config/i3/scripts/lock.sh
+#set $i3lockwall i3lock -i ~/Pictures/cyber_runner.png
+set $i3lockwall sh ~/.config/i3/scripts/lock.sh
 bindsym $mod+CTRL+Shift+l exec --no-startup-id $i3lockwall
 
 exec --no-startup-id feh --no-fehbg --bg-fill ~/.config/i3/feh/ign_LofiGirl-4.png
@@ -279,12 +278,19 @@ set_from_resource $white2 color15 #ffffff
 # hide borders
 hide_edge_borders both
 
-# class border backgr. text indicator child_border 
-client.focused 		#333333 $black2 $white2 #285577
-client.focused_inactive #333333 $background $foreground #484e50
-client.unfocused 	#333333 #222222 #888888 #292d2e #222222
-client.urgent 		$red1 $red1 $white2 $red1 $red1
-client.placeholder 	#000000 #0c0c0c $white2 #000000 #0c0c0c
+# class                 border  backgr. text    indicator child_border
+client.focused          $background $black1 $white2 $background
+client.focused_inactive $background $black1 $black2 $background
+client.unfocused        $background $background $black2 $background
+client.urgent           $red1 $red1 $white2 $red1 $red1
+client.placeholder      $red1 $red1 $white2 $red1 $red1
+
+#!# class border backgr. text indicator child_border 
+#!client.focused 		#333333 $black2 $white2 #285577
+#!client.focused_inactive #333333 $background $foreground #484e50
+#!client.unfocused 	#333333 #222222 #888888 #292d2e #222222
+#!client.urgent 		$red1 $red1 $white2 $red1 $red1
+#!client.placeholder 	#000000 #0c0c0c $white2 #000000 #0c0c0c
 
 for_window [class="URxvt*"] border pixel 1
 

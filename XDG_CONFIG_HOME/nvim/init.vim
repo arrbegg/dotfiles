@@ -1,0 +1,1 @@
+/home/arrbegg/dotfiles/nvim/init.vim

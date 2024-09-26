@@ -45,3 +45,5 @@ fi
 source $DOTFILES/zsh/scripts.sh
 
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+tput cup 0 0 #puts the cursor at 0 0 position(topleft)

@@ -82,7 +82,7 @@ URxvt.iso14755: false
 URxvt.iso14755_52: false
 
 ! URxvt*font: xft:Iosevka:size=12
-URxvt*font: xft:DejaVuSansMono:size=10:antialias=true
+URxvt*font: xft:Inconsolata Nerd Font Mono:style=Medium:size=14:pixelsize=16:antialias=true
 ! URxvt*font: xft:CascadiaCode-Regular:size=10:antialias=true
 URxvt*borderless: false 
 URxvt*externalBorder: 0
